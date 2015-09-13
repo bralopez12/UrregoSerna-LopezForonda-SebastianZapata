@@ -19,10 +19,18 @@ import java.io.IOException;
 public class Pilas {
     
     String arrayInfix;
+    
+    public pilas(){
+        
+    }
+    
     public void sisas(String arrayInfix)
     {
         this.arrayInfix = arrayInfix;
         
     }
+    
+    
+    
 }
     
