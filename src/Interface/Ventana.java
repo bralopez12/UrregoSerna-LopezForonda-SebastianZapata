@@ -22,13 +22,13 @@ import javax.swing.JTextArea;
  * @author Juan Camilo
  */
 public class Ventana extends JFrame {
-JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bigual, bDEL, bCE, bpunto, bpa, bpc, bp, bm, bd, bs, br;
+JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bigual, bDEL, bCE, bpunto, bpa, bpc, bp, bm, bd, bs, br, ima;
 JTextField Resultado;
 JPanel Panel;
 ImageIcon logos = new ImageIcon(getClass().getResource("/Imagenes/logo.png"));
 ImageIcon logo = new ImageIcon(getClass().getResource("/Imagenes/images.jpg"));
 JLabel m1;
-//ssss
+
 
 
 
@@ -41,7 +41,8 @@ JLabel m1;
         int l = a;
         int i = 125;
         Container contenedor = getContentPane();
-        
+        m1 = new JLabel("CALCULADORA INFIJA CON PILAS");
+        ima = new JButton(logos);
         b0 = new JButton("0");
         b1 = new JButton("1");
         b2 = new JButton("2");
@@ -70,9 +71,11 @@ JLabel m1;
         Panel.setBackground(Color.yellow);
         Panel.setLayout(null);
         Panel.add(Resultado);
-//        m1.setBounds(20, 20, 20, 20);
-//        m1.setText("Calculadora");
-//        Panel.add(m1);
+        //Configurando la posicion de los botones
+        Panel.add(ima);
+        ima.setBounds(x*2-20,y*6,220,220);
+        m1.setBounds(x*2, 20, 190, 40);
+        Panel.add(m1);
         Resultado.setBounds(65,75,resultado,35);
         Panel.add(b7);
         b7.setBounds(x,i,a,l);
@@ -115,7 +118,7 @@ JLabel m1;
         Panel.add(bigual);
         bigual.setBounds(x*3,y*5,a,l);
         
-        setSize(470, 595); //492 , 595
+        setSize(470, 640); //492 , 595
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/logo.png")).getImage());
