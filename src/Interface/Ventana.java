@@ -8,6 +8,8 @@ import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import java.util.Locale;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -22,12 +24,12 @@ import javax.swing.JTextArea;
  *
  * @author Juan Camilo
  */
-public class Ventana extends JFrame {
+public class Ventana extends JFrame implements ActionListener {
 JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bigual, bDEL, bCE, bpunto, bpa, bpc, bp, bm, bd, bs, br, ima;
 JTextField Resultado;
 JPanel Panel;
 ImageIcon logos = new ImageIcon(getClass().getResource("/Imagenes/logo.png"));
-ImageIcon logo = new ImageIcon(getClass().getResource("/Imagenes/images.jpg"));
+ImageIcon logo = new ImageIcon(getClass().getResource("/Imagenes/calculadora.png"));
 JLabel m1;
 
 
@@ -118,11 +120,35 @@ JLabel m1;
         br.setBounds(x*5,y*5,a,l);
         Panel.add(bigual);
         bigual.setBounds(x*3,y*5,a,l);
+        Panel.add(bDEL);
+        bDEL.setBounds(x*6,y,57,50);
+        
+        b0.addActionListener(this);
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+        b4.addActionListener(this);
+        b5.addActionListener(this);
+        b6.addActionListener(this);
+        b7.addActionListener(this);
+        b8.addActionListener(this);
+        b9.addActionListener(this);
+        bpunto.addActionListener(this);
+        bigual.addActionListener(this);
+        bd.addActionListener(this);
+        bm.addActionListener(this);
+        bs.addActionListener(this);
+        bp.addActionListener(this);
+        br.addActionListener(this);
+        bCE.addActionListener(this);
+        bpa.addActionListener(this);
+        bpc.addActionListener(this);
+        bDEL.addActionListener(this);
         
         setSize(470, 640); //492 , 595
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/logo.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/calculadora.png")).getImage());
     }
     
     public static void main(String[] args) {
@@ -130,6 +156,105 @@ JLabel m1;
         app.setResizable(false);
         app.setLocation(500, 50);
      }
+    public void actionPerformed(ActionEvent ae) {
+ 
+        try {
+ 
+            switch (ae.getActionCommand()) {
+ 
+                case "0":
+                    Resultado.setText(Resultado.getText() + "0");
+                    break;
+ 
+                case "1":
+                    Resultado.setText(Resultado.getText() + "1");
+                    break;
+                case "2":
+                    Resultado.setText(Resultado.getText() + "2");
+                    break;
+ 
+                case "3":
+                    Resultado.setText(Resultado.getText() + "3");
+                    break;
+ 
+                case "4":
+                    Resultado.setText(Resultado.getText() + "4");
+                    break;
+ 
+                case "5":
+                    Resultado.setText(Resultado.getText() + "5");
+                    break;
+ 
+                case "6":
+                    Resultado.setText(Resultado.getText() + "6");
+                    break;
+ 
+                case "7":
+                    Resultado.setText(Resultado.getText() + "7");
+                    break;
+ 
+                case "8":
+                    Resultado.setText(Resultado.getText() + "8");
+                    break;
+ 
+                case "9":
+                    Resultado.setText(Resultado.getText() + "9");
+                    break;
+ 
+                case "(":
+                    Resultado.setText(Resultado.getText() + "(");
+                    break;
+ 
+                case ")":
+                    Resultado.setText(Resultado.getText() + ")");
+                    break;
+ 
+                case "*":
+                    Resultado.setText(Resultado.getText() + "*");
+                    break;
+ 
+                case "-":
+                    Resultado.setText(Resultado.getText() + "-");
+                    break;
+ 
+                case "+":
+                    Resultado.setText(Resultado.getText() + "+");
+                    break;
+                   
+                    case ".":
+                    Resultado.setText(Resultado.getText() + ".");
+                    break;  
+                   
+                       
+                           case "/":
+                    Resultado.setText(Resultado.getText() + "/");
+                    break;
+                       
+                case "AC":
+                    Resultado.setText("");
+                    break;
+                   
+                         
+                case "^":
+                    Resultado.setText(Resultado.getText() + "^");
+                    break;    
+ 
+                case "=":
+ 
+                    break;
+                case "DEL":
+                    if(Resultado.getText().length()!=0){
+                     Resultado.setText(Resultado.getText().substring(0, Resultado.getText().length()-1));
+                     }
+                    
+                   
+                   
+ 
+            }
+ 
+        } catch (Exception E) {
+            throw new UnsupportedOperationException("ERROR EN LOS BOTONES"); //To change body of generated methods, choose Tools | Templates.
+        }
     
-    
+    }
 }
