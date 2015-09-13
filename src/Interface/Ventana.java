@@ -7,6 +7,7 @@ import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
+import java.util.Locale;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -83,10 +84,10 @@ JLabel m1;
         b8.setBounds(x*2,i,a,l);
         Panel.add(b9);
         b9.setBounds(x*3,i,a,l);
-        Panel.add(bDEL);
-        bDEL.setBounds(x*4, i, 56, l);
+        Panel.add(bp);
+        bp.setBounds(x*4, i, a, l);
         Panel.add(bCE);
-        bCE.setBounds((x*5)+5,i, 56, l);
+        bCE.setBounds (x*5,i, a, l);
         Panel.add(b4);
         b4.setBounds(x,y*3,a,l);
         Panel.add(b5);
@@ -126,6 +127,8 @@ JLabel m1;
     
     public static void main(String[] args) {
         Ventana app = new Ventana();
+        app.setResizable(false);
+        app.setLocation(500, 50);
      }
     
     
