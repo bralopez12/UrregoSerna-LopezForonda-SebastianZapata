@@ -234,7 +234,8 @@ JLabel m1;
                     break;
                 
                 case "=":
-                  
+                  Pilas pilas = new Pilas();
+                  pilas.sisas(Resultado.getText());
                     break;
                 case "DEL":
                     if(Resultado.getText().length()!=0){
