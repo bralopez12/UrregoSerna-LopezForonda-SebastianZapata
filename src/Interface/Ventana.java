@@ -4,6 +4,7 @@ package Interface;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import javax.swing.JFrame;
@@ -12,18 +13,23 @@ import javax.swing.JTextField;
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 
 /**
  *
- * @author JButton b0, b1, b2, b3, b4, b5, b5, b6, b7, b8, b9, bpa, bpc, bp, bm, bd, bs, br;
+ * @author Juan Camilo
  */
 public class Ventana extends JFrame {
 JButton b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bigual, bDEL, bCE, bpunto, bpa, bpc, bp, bm, bd, bs, br;
 JTextField Resultado;
 JPanel Panel;
-ImageIcon logos;
-JLabel img;
+ImageIcon logos = new ImageIcon(getClass().getResource("/Imagenes/logo.png"));
+ImageIcon logo = new ImageIcon(getClass().getResource("/Imagenes/images.jpg"));
+JLabel m1;
+
+
 
 
     public Ventana() throws HeadlessException {
@@ -57,21 +63,16 @@ JLabel img;
         bd = new JButton("/");
         bs = new JButton("+");
         br = new JButton("-");
-        ImageIcon image = new ImageIcon("/Imagenes/logo.png"); 
         Resultado = new JTextField();
         Panel = new JPanel();
-        
-        Panel.add(img);
-        img.setIcon(image); 
-        img.setSize(135,135); 
-        img.setLocation(20,20); 
-        img.setVisible(true); 
         setContentPane(Panel);
         Panel.setLayout(null);
         Panel.setBackground(Color.yellow);
         Panel.setLayout(null);
-        
         Panel.add(Resultado);
+//        m1.setBounds(20, 20, 20, 20);
+//        m1.setText("Calculadora");
+//        Panel.add(m1);
         Resultado.setBounds(65,75,resultado,35);
         Panel.add(b7);
         b7.setBounds(x,i,a,l);
@@ -114,20 +115,15 @@ JLabel img;
         Panel.add(bigual);
         bigual.setBounds(x*3,y*5,a,l);
         
-        
-        
-        
-        //Panel.add(Panel, BorderLayout.CENTER);
         setSize(470, 595); //492 , 595
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setIconImage(new ImageIcon(getClass().getResource("/Imagenes/logo.png")).getImage());
     }
     
-    
     public static void main(String[] args) {
         Ventana app = new Ventana();
-    }
+     }
     
     
 }
