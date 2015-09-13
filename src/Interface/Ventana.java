@@ -28,7 +28,7 @@ JPanel Panel;
 ImageIcon logos = new ImageIcon(getClass().getResource("/Imagenes/logo.png"));
 ImageIcon logo = new ImageIcon(getClass().getResource("/Imagenes/images.jpg"));
 JLabel m1;
-
+//ssss
 
 
 
