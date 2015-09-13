@@ -152,6 +152,9 @@ JLabel m1;
         app.setResizable(false);
         app.setLocation(500, 50);
      }
+    
+    
+    
     public void actionPerformed(ActionEvent ae) {
  
         try {
@@ -231,7 +234,7 @@ JLabel m1;
                     break;
                 
                 case "=":
- 
+                  
                     break;
                 case "DEL":
                     if(Resultado.getText().length()!=0){
